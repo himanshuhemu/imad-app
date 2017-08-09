@@ -5,12 +5,69 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title: "Article-one|himanshu",
+    heading:"Article one",
+    date: "august 9, 2017",
+    content:`<p>
+            So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
+        </p>
+        <p>
+            One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
+        </p>`
+}
+function createTemplate(data){
+    var title=data.title;
+    var date=data.date;
+    var heading=data.heading;
+    var content=data.content;
+}
+var htmlTemplate = `
+<html>
+    <head>
+        <title>
+            ${tile}
+        </title>
+        <meta name="viewport" content="width-device,initial-scale-1"/>
+       <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="contain">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+    <h3>
+        ${heading}    </h3>
+    <div>
+        ${date}
+    </div>
+    <div>
+     ${content}
+    </div>
+    </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+`;
+return htmlTemplate;
+}
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function (req, res) {
-     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+     res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function (req, res) {
