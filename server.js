@@ -5,7 +5,10 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+
+
+var articles = { 
+'article-one' : {
     title: "Article-one|himanshu",
     heading:"Article one",
     date: "august 9, 2017",
@@ -13,9 +16,30 @@ var articleOne = {
             So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
         </p>
         <p>
+            One morev  thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
+        </p>`
+}, 
+'article-two':{
+    title: "Article-Two|himanshu",
+    heading:"Article two",
+    date: "august 10, 2017",
+    content:`<p>
+            So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
+        </p>
+        <p>
             One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
         </p>`
-}; 
+},
+'article-three':{title: "Article-Three|himanshu",
+    heading:"Article three",
+    date: "august 11, 2017",
+    content:`<p>
+            So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
+        </p>
+        <p>
+            One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
+        </p>`},
+};
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
@@ -66,18 +90,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-     res.send(createTemplate(articleOne));
+app.get('/:articlename', function (req, res) //articleName == article-one
+{ var articleName = req.params.article/name;
+     res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-   
-});
 
-app.get('/article-three', function (req, res) {
- res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));   
-});
 
 
 app.get('/ui/style.css', function (req, res) {
