@@ -6,21 +6,21 @@ var app = express();
 app.use(morgan('combined'));
 var articles = { 
 'articleOne' : {
-    title: 'Article-one|himanshu',
-    heading:'Article one',
+    title : 'Article-One|himanshu',
+    heading :'Article one',
     date: 'august 9, 2017',
-    content:`<p>
+    content :`<p>
             So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
         </p>
         <p>
             One morev  thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
         </p>`
 }, 
-'article-two':{
-    title: "Article-Two|himanshu",
-    heading:"Article two",
-    date: "august 10, 2017",
-    content:` <p>
+'article-two': {
+    title : "Article-Two|himanshu",
+    heading  : "Article two",
+    date : "august 10, 2017",
+    content :` <p>
         I am a shy boy , i am a bit nervous about a lot of people and i am trying to increase m confidence.
             
         </p>
@@ -28,7 +28,7 @@ var articles = {
             For gaining some confidence i am doing a bit regular excercises .
         </p>`
 },
-'article-three':{title: "Article-Three|himanshu",
+'article-three': {title: "Article-Three|himanshu",
     heading:"Article three",
     date: "august 11, 2017",
     content:`<p>
