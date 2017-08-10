@@ -37,8 +37,8 @@ var articles = {
             So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
         </p>
         <p>
-            One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
-        </p>`},
+            One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .https://imad.hasura.io/code/files/ui%2Farticle-two.html
+        </p>`}
 };
 function createTemplate(data){
     var title=data.title;
