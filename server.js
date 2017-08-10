@@ -8,7 +8,7 @@ var articles = {
 'articleOne' : {
     title : 'Article-One|himanshu',
     heading :'Article one',
-    date: 'august 9, 2017',
+    date : 'august 9, 2017',
     content :`<p>
             So this is himanshu i am a tech enthusiast .I am pursuing my b. tech course from CGC college of engineering . I am also trying to o something different which can make myself unique .
         </p>
@@ -78,7 +78,7 @@ var htmlTemplate = `
 
 
 
-`;
+    `;
 return htmlTemplate;
 }
 
