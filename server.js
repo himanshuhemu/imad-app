@@ -15,13 +15,13 @@ var articleOne = {
         <p>
             One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .
         </p>`
-}
+}; 
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
     var heading=data.heading;
     var content=data.content;
-}
+
 var htmlTemplate = `
 <html>
     <head>
@@ -42,7 +42,7 @@ var htmlTemplate = `
     <div>
         ${date}
     </div>
-    <div>
+    <div>  
      ${content}
     </div>
     </div>
