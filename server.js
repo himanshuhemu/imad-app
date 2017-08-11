@@ -38,6 +38,7 @@ var articles = {
             One more thing i am also qwing a youtube channel with almost 50 subscribers . and i try to post a new technical video every weekend to make a good content at my channel .https://imad.hasura.io/code/files/ui%2Farticle-two.html
         </p>`}
 };
+
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
@@ -48,7 +49,7 @@ var htmlTemplate = `
 <html>
     <head>
         <title>
-            ${tile}
+            ${title}
         </title>
         <meta name="viewport" content="width-device,initial-scale-1"/>
        <link href="/ui/style.css" rel="stylesheet" />
@@ -89,8 +90,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articlename', function (req, res) //articleName == article-one
-{ var articleName = req.params.article/name;
-     res.send(createTemplate(articles[articleName]));
+{ var articleName = req.params.articlename;
+     res.send(createTemplate(articles[articlename]));
 });
 
 
