@@ -11,17 +11,23 @@ button.onclick=function(){
       if(request.readyState ===XMLHttpRequest.DONE){
           //take some action
           if(request.status===200){
-               var counter = request.responseText;
-               var span = document.getElementById('count');
-               span.innerHTML = counter.toString();
+               var names= request.responseText;
+               names = JSON.parse(names);
+  var list = '';
+  for (var i=0 ; i<names.length ; i++){
+    list += '<li>'+ names[i] + '</li>';  
+  }
+  var ul = document.getElementById('namelist');
+  ul.innerHTML = list;
+             
           }
       }  
       //not done yet 
     };
     //make the request
-  request.open('GET', 'http://himanshukumar26698.imad.hasura-app.io/counter', true);
+  request.open('GET', 'http://himanshukumar26698.imad.hasura-app.io/submit-name?name=' + name, true);
   request.send(null);
-};
+}; 
 //select name
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
